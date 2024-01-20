@@ -4,6 +4,8 @@ import Title from './components/Title';
 import './App.css';
 import styled from 'styled-components';
 import Flex from './components/Flex';
+import Console from './components/Console';
+import Button from './components/Button';
 
 const AppWrapper = styled.div`
 width: 100%;
@@ -18,6 +20,11 @@ function App() {
     <AppWrapper>
       <Flex justify="center">
         <Title>Styled component Test</Title>
+      </Flex>
+      <Flex direction="colum">
+        <Console color="green" />
+        <Button primary color='red' align="flex-end">Send</Button>
+
       </Flex>
     </AppWrapper>
   );
