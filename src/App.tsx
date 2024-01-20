@@ -21,9 +21,9 @@ function App() {
       <Flex justify="center">
         <Title>Styled component Test</Title>
       </Flex>
-      <Flex direction="colum">
-        <Console color="green" />
-        <Button outlined color='green' align="flex-end">Send</Button>
+      <Flex direction="column">
+        <Console />
+        <Button outlined align="flex-end">Send</Button>
 
       </Flex>
     </AppWrapper>

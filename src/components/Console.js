@@ -10,14 +10,14 @@ height: 70vh;
 background: black;
 font-size: 24px;
 border: none;
-color: ${({ color }) => color ? color : 'white'};
+color: ${props => props.color || props.theme.colors.primary};
 resize: none;
 &: focus {
   outline: none;
 }
 `
 
-const Console = ({ color, ...props }) => {
+const Console = (props) => {
 
   const [lines, setLines] = useState(['/homes/Vladimir>']);
 
@@ -27,12 +27,14 @@ const Console = ({ color, ...props }) => {
     }
   }
 
+  console.log(props.theme);
+
   return (
     <Flex>
       <Flex direction='column' margin="0 10px">
-        {lines.map(line => <Line color={color}>{line}</Line>)}
+        {lines.map(line => <Line color={props.color}>{line}</Line>)}
       </Flex>
-      <StyledConsole onKeyDown={onKeyPress} color={color} {...props} />
+      <StyledConsole onKeyDown={onKeyPress} {...props} />
 
     </Flex>
   )

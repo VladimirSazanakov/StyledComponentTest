@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const Global = createGlobalStyle`
 * {
@@ -13,13 +13,23 @@ const Global = createGlobalStyle`
   font-family: sans-serif;
 }`
 
+const theme = {
+  colors: {
+    primary: "green",
+    secondary: "red",
+  }
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Global />
-    <App />
+    <ThemeProvider theme={theme}>
+      <Global />
+      <App />
+
+    </ThemeProvider>
   </React.StrictMode>
 );
 
