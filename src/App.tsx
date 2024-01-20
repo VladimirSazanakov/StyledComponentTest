@@ -23,7 +23,7 @@ function App() {
       </Flex>
       <Flex direction="colum">
         <Console color="green" />
-        <Button primary color='red' align="flex-end">Send</Button>
+        <Button outlined color='green' align="flex-end">Send</Button>
 
       </Flex>
     </AppWrapper>
